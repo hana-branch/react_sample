@@ -1,15 +1,9 @@
 import React, { Component } from "react";
-import branch from 'branch-sdk';
+import { trackCustomEvent } from '../../Branch';
 
 class Red extends Component {
   componentDidMount() {
-    branch.closeJourney( err => {
-      console.log("RED")
-      if (!err) {
-        setTimeout(()=> {
-          branch.track("pageview")}, 1000)
-      }
-    });
+    trackCustomEvent('CUSTOM_EVENT_HELLO', {});
   }
 
   render() {
