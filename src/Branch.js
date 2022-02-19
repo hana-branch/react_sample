@@ -1,5 +1,5 @@
 export function branchInit() {
-	window.branch.init('key_live_fdGefNezUn2f4SqsEYE6sljpDwmRPOl2', (err, data) => {
+	window.branch.init('key_live_fdGXXXXXXXXXX', (err, data) => {
 	  if (err === null) {
 	    console.log(data);
 	  }
