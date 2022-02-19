@@ -1,10 +1,8 @@
 import React from "react";
 
-const Blue = (props) => {
+const Blue = () => {
   return ( 
-  	<React.Fragment>
-  	{props.children}
-  	</React.Fragment>
+  	<h1 className="ui blue header">BLUE!</h1>
   );
 }
 
