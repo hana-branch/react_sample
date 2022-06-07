@@ -1,20 +1,23 @@
 import React, { useEffect } from 'react';
-import { branchInit } from '../Branch';
 
 const App = () => {
   useEffect(() => {
-    closeBranchJourney()
+    closeBranchJourney();
   })
 
   const closeBranchJourney = () => {
     // close
     window.branch.closeJourney((err) => {
-      console.log("Branch SDK closeJourney :", err)
-      if (!err) {
+      if (err) {
+        console.error("Error From Branch SDK", err);
+      }
+      else {
         setTimeout(() => {
           // reopen
           window.branch.track("pageview", (err) => {
-            console.log("Branch SDK track pageview :", err)
+            if (err) {
+              console.error("Error From BRANCH SDK", err);
+            }
           })
         }, 700)
       }

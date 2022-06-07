@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { branchInit } from '../../Branch';
 
 const Index = () => {
   useEffect(() => {
@@ -10,14 +9,18 @@ const Index = () => {
   const closeBranchJourney = () => {
     // close
     window.branch.closeJourney((err) => {
-      console.log("Branch SDK closeJourney :", err)
       if (!err) {
         setTimeout(() => {
           // reopen
-          window.branch.track("pageview", (err) => {
-            console.log("Branch SDK track pageview :", err)
+          window.branch.track("pageview", (err) => { 
+            if (err) {
+              console.error("Error From BRANCH SDK:", err);
+            }
           })
         }, 700)
+      }
+      else {
+        console.error("Error From BRANCH SDK:", err);
       }
     })
   }
