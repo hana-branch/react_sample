@@ -1,13 +1,18 @@
 import React, { useEffect } from 'react';
 
 const App = () => {
+  console.log("APP Component Start")
   useEffect(() => {
-    closeBranchJourney();
+    console.log("useEffect");
+    setTimeout(() => {
+      closeBranchJourney();
+    }, 200);
   })
 
   const closeBranchJourney = () => {
     // close
     window.branch.closeJourney((err) => {
+      console.log("Call close Journey")
       if (err) {
         console.error("Error From Branch SDK", err);
       }
@@ -19,10 +24,12 @@ const App = () => {
               console.error("Error From BRANCH SDK", err);
             }
           })
-        }, 700)
+        }, 200)
       }
-    })
+    });
   }
+
+  console.log("TEST")
 
   return ( 
   	<React.Fragment>

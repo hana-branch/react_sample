@@ -1,5 +1,8 @@
 export function branchInit() {
-	window.branch.init('key_live_XXXXXX', (err, data) => {
+	const listener = (event, data) => { console.log(event, data); };
+	window.branch.addListener(listener);
+
+	window.branch.init('key_live_fdGefNezUn2f4SqsEYE6sljpDwmRPOl2', (err, data) => {
 	  if (err === null) {
 	    console.log(`Data From BRANCH SDK: ${JSON.stringify(data)}`);
 	  }

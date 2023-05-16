@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 const Nav = () => {
   return (
     <div className="ui secondary menu">
+      <div class="branch-journeys-top"></div>
       <Link to="/" className="item">
         Home
       </Link>

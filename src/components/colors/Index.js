@@ -10,14 +10,14 @@ const Index = () => {
     // close
     window.branch.closeJourney((err) => {
       if (!err) {
-        setTimeout(() => {
-          // reopen
-          window.branch.track("pageview", (err) => { 
-            if (err) {
-              console.error("Error From BRANCH SDK:", err);
-            }
-          })
-        }, 700)
+        // setTimeout(() => {
+        //   // reopen
+        //   window.branch.track("pageview", (err) => { 
+        //     if (err) {
+        //       console.error("Error From BRANCH SDK:", err);
+        //     }
+        //   })
+        // }, 700)
       }
       else {
         console.error("Error From BRANCH SDK:", err);
