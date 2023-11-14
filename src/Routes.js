@@ -11,12 +11,14 @@ const Routes = () => {
       <Router>
         <div className="ui container">
           <Nav />
-          <Route path="/" exact component={App} />
-          <Switch>
-            <Route path="/colors" exact component={Colors} />
-            <Route path="/colors/red" exact component={Red} />
-            <Route path="/colors/blue" exact component={Blue} />
-          </Switch>
+          <main className="ui main text container">
+            <Route path="/" exact component={App} />
+            <Switch>
+              <Route path="/colors" exact component={Colors} />
+              <Route path="/colors/red" exact component={Red} />
+              <Route path="/colors/blue" exact component={Blue} />
+            </Switch>
+          </main>
         </div>
       </Router>
     </div>    

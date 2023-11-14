@@ -1,31 +1,35 @@
 import React, { useEffect } from "react";
+import { Link } from 'react-router-dom';
 
 const Blue = () => {
   useEffect(() => {
-    closeBranchJourney()
+    // closeBranchJourney();
   })
 
   const closeBranchJourney = () => {
     // close
     window.branch.closeJourney((err) => {
-      if (!err) {
-        setTimeout(() => {
-          // reopen
-          window.branch.track("pageview", (err) => { 
-            if (err) {
-              console.error("Error From BRANCH SDK:", err);
-            }
-          })
-        }, 700)
+      if (err) {
+        console.error("[branch.io] Fails to close the Journey: ", err);
       }
       else {
-        console.error("Error From BRANCH SDK:", err);
+        setTimeout(() => {
+          // reopen
+          window.branch.track("pageview", (err) => {
+            if (err) {
+              console.error("[branch.io] Fails to show the Journey:", err);
+            }
+          });
+        }, 700);
       }
-    })
+    });
   }
 
-  return ( 
-  	<h1 className="ui blue header">BLUE!</h1>
+  return (
+    <React.Fragment>
+      <h1 className="ui blue header">BLUE!</h1>
+      <Link to="/colors">Go Back</Link>
+    </React.Fragment>
   );
 }
 

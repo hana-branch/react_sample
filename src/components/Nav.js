@@ -3,15 +3,17 @@ import { Link } from 'react-router-dom';
 
 const Nav = () => {
   return (
-    <div className="ui secondary menu">
-      <div class="branch-journeys-top"></div>
-      <Link to="/" className="item">
-        Home
-      </Link>
-      <Link to="/colors" className="item">
-        Colors
-      </Link>
-    </div>
+    <div className="ui main text container">
+    <nav className="ui fixed inverted menu">
+      <div className="branch-journeys-top"></div>
+      <div className="ui container">
+        <Link to="/" className="item">
+          Home
+        </Link>
+        <Link to="/colors" className="item">Colors</Link>
+      </div>
+    </nav>
+  </div>
   );
 };
 

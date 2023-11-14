@@ -1,35 +1,30 @@
 import React, { useEffect } from 'react';
 
 const App = () => {
-  console.log("APP Component Start")
   useEffect(() => {
-    console.log("useEffect");
-    setTimeout(() => {
-      closeBranchJourney();
-    }, 200);
+    // setTimeout(() => {
+    //   closeBranchJourney();
+    // }, 300);
   })
 
   const closeBranchJourney = () => {
     // close
     window.branch.closeJourney((err) => {
-      console.log("Call close Journey")
       if (err) {
-        console.error("Error From Branch SDK", err);
+        console.error("[branch.io] Fails to close the Journey: ", err);
       }
       else {
         setTimeout(() => {
           // reopen
           window.branch.track("pageview", (err) => {
             if (err) {
-              console.error("Error From BRANCH SDK", err);
+              console.error("[branch.io] Fails to show the Journey:", err);
             }
           })
-        }, 200)
+        }, 700)
       }
     });
   }
-
-  console.log("TEST")
 
   return ( 
   	<React.Fragment>
