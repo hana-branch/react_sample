@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Blue = () => {
   useEffect(() => {
-    // closeBranchJourney();
+    closeBranchJourney();
   })
 
   const closeBranchJourney = () => {
@@ -13,14 +13,14 @@ const Blue = () => {
         console.error("[branch.io] Fails to close the Journey: ", err);
       }
       else {
-        setTimeout(() => {
-          // reopen
-          window.branch.track("pageview", (err) => {
-            if (err) {
-              console.error("[branch.io] Fails to show the Journey:", err);
-            }
-          });
-        }, 700);
+        // setTimeout(() => {
+        //   // reopen
+        //   window.branch.track("pageview", (err) => {
+        //     if (err) {
+        //       console.error("[branch.io] Fails to show the Journey:", err);
+        //     }
+        //   });
+        // }, 700);
       }
     });
   }

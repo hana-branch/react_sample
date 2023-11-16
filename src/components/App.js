@@ -2,9 +2,7 @@ import React, { useEffect } from 'react';
 
 const App = () => {
   useEffect(() => {
-    // setTimeout(() => {
-    //   closeBranchJourney();
-    // }, 300);
+    closeBranchJourney();
   })
 
   const closeBranchJourney = () => {
@@ -21,7 +19,7 @@ const App = () => {
               console.error("[branch.io] Fails to show the Journey:", err);
             }
           })
-        }, 700)
+        }, 500)
       }
     });
   }
