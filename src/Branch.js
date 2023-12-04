@@ -1,6 +1,6 @@
 export function branchInit() {
-	// const listener = (event, data) => { console.log(event, data); };
-	// window.branch.addListener(listener);
+	const listener = (event, data) => { console.log(event, data); };
+	window.branch.addListener(listener);
 
 	window.branch.init('key_live_fdGefNezUn2f4SqsEYE6sljpDwmRPOl2', (err, data) => {
 	  if (err === null) {

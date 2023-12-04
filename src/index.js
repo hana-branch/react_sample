@@ -13,4 +13,4 @@ ReactDOM.render(
   document.querySelector('#root')
 );
 
-branchInit();
+// branchInit();

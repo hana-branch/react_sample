@@ -2,11 +2,14 @@ import React, { useEffect } from 'react';
 
 const App = () => {
   useEffect(() => {
-    closeBranchJourney();
+    setTimeout(() => {
+      closeBranchJourney();
+    }, 250);
   })
 
   const closeBranchJourney = () => {
     // close
+    console.info("[branch.io] closeJourney is called");
     window.branch.closeJourney((err) => {
       if (err) {
         console.error("[branch.io] Fails to close the Journey: ", err);
@@ -14,6 +17,7 @@ const App = () => {
       else {
         setTimeout(() => {
           // reopen
+          console.info("[branch.io] pageview is called");
           window.branch.track("pageview", (err) => {
             if (err) {
               console.error("[branch.io] Fails to show the Journey:", err);

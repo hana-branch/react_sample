@@ -8,6 +8,7 @@ const Blue = () => {
 
   const closeBranchJourney = () => {
     // close
+    console.info("[branch.io] closeJourney is called");
     window.branch.closeJourney((err) => {
       if (err) {
         console.error("[branch.io] Fails to close the Journey: ", err);
