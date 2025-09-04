@@ -1,16 +1,17 @@
-import branch from 'branch-sdk';
-import { branchInit } from './Branch';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Routes from './Routes';
+import { render } from 'react-dom';
+import AppRoutes from './Routes';
+import { branchInit } from './Branch';
 
 if (module.hot) {
   module.hot.accept();
 }
 
-ReactDOM.render(
-  <Routes />,
+render(
+  <React.StrictMode>
+    <AppRoutes />
+  </React.StrictMode>,
   document.querySelector('#root')
 );
 
-// branchInit();
+branchInit();

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const App = () => {
   useEffect(() => {
@@ -15,15 +16,15 @@ const App = () => {
         console.error("[branch.io] Fails to close the Journey: ", err);
       }
       else {
-        setTimeout(() => {
-          // reopen
-          console.info("[branch.io] pageview is called");
-          window.branch.track("pageview", (err) => {
-            if (err) {
-              console.error("[branch.io] Fails to show the Journey:", err);
-            }
-          })
-        }, 500)
+        // setTimeout(() => {
+        //   // reopen
+        //   console.info("[branch.io] pageview is called");
+        //   window.branch.track("pageview", (err) => {
+        //     if (err) {
+        //       console.error("[branch.io] Fails to show the Journey:", err);
+        //     }
+        //   })
+        // }, 500)
       }
     });
   }
